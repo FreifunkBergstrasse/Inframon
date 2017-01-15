@@ -38,7 +38,7 @@
 
 - name: Add mod_gearman Site Config
   when: mod_gearman_moduleinstalled|success
-  template: src=module.conf.j2 dest=/etc/mod-gearman/module.conf owner=root group=root
+  template: src=worker.conf.j2 dest=/etc/mod-gearman/worker.conf owner=root group=root
 
 - name: Configure Hostgroups for Icinga Satellites
   template: "src=hostgroups-satellites.cfg.j2 dest='/etc/icinga/objects/hostgroups-satellites.cfg' owner=root group=root"
