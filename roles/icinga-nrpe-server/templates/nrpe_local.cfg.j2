@@ -20,6 +20,10 @@ command[check_tunneldigger]=/usr/lib/nagios/plugins/check_procs -c 1: -w 1: -C p
 command[check_dhcp-server]=/usr/lib/nagios/plugins/check_procs -c 1: -w 1: -C dhcpd
 command[check_vnstat]=/usr/lib/nagios/plugins/check_vnstat.sh -i eth0
 command[check-dhcp-client]=/usr/lib/nagios/plugins/check_dhcp
+command[check-dns4-client]=/usr/lib/nagios/plugins/check_dns -H autoupdater-v4.server.freie-infrastruktur.de
+command[check-dns6-client]=/usr/lib/nagios/plugins/check_dns -H autoupdater-v6.server.freie-infrastruktur.de
+
+
 
  
 # Service VM Server
