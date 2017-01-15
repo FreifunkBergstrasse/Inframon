@@ -21,6 +21,9 @@
     regexp: '^check_external_commands='
     line: 'check_external_commands=1'
 
+- name: Make sure we can use htpasswd module
+  apt: "pkg=python-passlib state=installed"
+
 - htpasswd:
     path: /etc/icinga/htpasswd.users
     name: icingaadmin
