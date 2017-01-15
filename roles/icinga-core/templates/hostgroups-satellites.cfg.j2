@@ -1,0 +1,9 @@
+# {{ ansible_managed }}
+
+
+
+{% for item in groups['icinga-satellite'] %}
+define hostgroup{
+hostgroup_name {{ item }}
+}
+{% endfor %}

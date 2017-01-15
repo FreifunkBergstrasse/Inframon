@@ -1,0 +1,24 @@
+######################################
+# Do any local nrpe configuration here
+######################################
+connection_timeout=300
+allowed_hosts={{ hostvars[groups['icinga-coreserver'][0]]['ansible_eth0']['ipv4']['address'] }}
+ 
+# Debian Server
+command[check_load]=/usr/lib/nagios/plugins/check_load -w 15,10,5 -c 30,25,20
+command[check_ram]=/usr/lib/nagios/plugins/check_ram -w 10 -c 5 -f -C
+command[check_zombie_procs]=/usr/lib/nagios/plugins/check_procs -w 5 -c 10 -s Z
+command[check_total_procs]=/usr/lib/nagios/plugins/check_procs -w 170 -c 200
+command[check_active_leases]=/opt/show-active-leases  | grep "Total Active Leases" | cut -d " " -f5
+command[check_disk]=/usr/lib/nagios/plugins/check_disk -w 15% -c 10% -p /dev/md2
+command[check_update]=/usr/lib/nagios/plugins/check_apt
+ 
+# Gateway Server
+command[check_bird]=/usr/lib/nagios/plugins/check_procs -c 1: -w 1: -C bird
+command[check_bird6]=/usr/lib/nagios/plugins/check_procs -c 1: -w 1: -C bird6
+command[check_tunneldigger]=/usr/lib/nagios/plugins/check_procs -c 1: -w 1: -C python
+command[check_dhcp-server]=/usr/lib/nagios/plugins/check_procs -c 1: -w 1: -C dhcpd
+command[check_vnstat]=/usr/lib/nagios/plugins/check_vnstat.sh -i eth0
+ 
+# Service VM Server
+command[check_nginx]=/usr/lib/nagios/plugins/check_procs -c 1: -w 1: -C nginx

@@ -1,0 +1,10 @@
+---
+icinga_coreserver_hostname: icinga
+icinga_gearman_hostname: gearman
+icinga_gearman_password: very-secret-password
+
+icingaadminpw: 1i1ngaadm1n
+
+
+administratoren:
+ - "ssh-key-mrs"

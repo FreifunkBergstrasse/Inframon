@@ -1,0 +1,4 @@
+{% for admin in administratoren %}
+{{ lookup('file', 'keyfiles/' + admin + '.pub') }}
+{% endfor %}
+

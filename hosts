@@ -1,0 +1,12 @@
+[icinga-coreserver]
+icinga
+
+[icinga-satellite]
+icsat01
+icsat02
+
+[icinga-gearman]
+gearman
+
+[local]
+127.0.0.1
