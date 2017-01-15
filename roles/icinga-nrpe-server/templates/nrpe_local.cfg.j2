@@ -19,6 +19,8 @@ command[check_bird6]=/usr/lib/nagios/plugins/check_procs -c 1: -w 1: -C bird6
 command[check_tunneldigger]=/usr/lib/nagios/plugins/check_procs -c 1: -w 1: -C python
 command[check_dhcp-server]=/usr/lib/nagios/plugins/check_procs -c 1: -w 1: -C dhcpd
 command[check_vnstat]=/usr/lib/nagios/plugins/check_vnstat.sh -i eth0
+command[check-dhcp-client]=/usr/lib/nagios/plugins/check_dhcp
+
  
 # Service VM Server
 command[check_nginx]=/usr/lib/nagios/plugins/check_procs -c 1: -w 1: -C nginx
