@@ -2,7 +2,7 @@
 # Do any local nrpe configuration here
 ######################################
 connection_timeout=300
-allowed_hosts={{ hostvars[groups['icinga-coreserver'][0]]['ansible_eth0']['ipv4']['address'] }}
+allowed_hosts=127.0.0.1,{{ hostvars[groups['icinga-coreserver'][0]]['ansible_eth0']['ipv4']['address'] }}
  
 # Debian Server
 command[check_load]=/usr/lib/nagios/plugins/check_load -w 15,10,5 -c 30,25,20
