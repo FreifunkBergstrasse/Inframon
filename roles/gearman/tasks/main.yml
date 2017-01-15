@@ -8,7 +8,9 @@
 - name: Add gearman-job-server systemd Config
   template: src=gearman-job-server.service.j2 dest=/lib/systemd/system/gearman-job-server.service owner=root group=root
   notify:
-    - Reload gearman-job-server
+    - Stop gearman-job-server
+    - Start gearman-job-server
+
 
 - name: install common packages
   apt:
