@@ -46,6 +46,33 @@ notification_period 	24x7
 notification_options	w,c,r
 }
 
+define service{
+host_name               {{ item }}
+service_description     HTTP web access via v4
+check_command           check_nrpe_1arg!check-http4-client
+max_check_attempts      5
+check_interval          5
+retry_interval          3
+check_period            24x7
+notification_interval   30  
+notification_period     24x7 
+notification_options    w,c,r
+}
+
+define service{
+host_name               {{ item }}
+service_description     HTTP web access via v6
+check_command           check_nrpe_1arg!check-http6-client
+max_check_attempts      5
+check_interval          5
+retry_interval          3
+check_period            24x7
+notification_interval   30
+notification_period     24x7
+notification_options    w,c,r
+}
+
+
 
 
 ########################################################
