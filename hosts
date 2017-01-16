@@ -1,12 +1,12 @@
 [icinga-coreserver]
-icinga
+icinga  ansible_ssh_host=10.1.160.22
 
 [icinga-satellite]
-icsat01
-icsat02
+icsat01 ansible_ssh_host=10.1.160.24
+#icsat02 ansible_ssh_host=10.1.160.25
 
 [icinga-gearman]
-gearman
+icgearman ansible_ssh_host=10.1.160.23
 
 [local]
 127.0.0.1
