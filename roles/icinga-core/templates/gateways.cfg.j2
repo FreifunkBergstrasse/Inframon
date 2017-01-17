@@ -1,0 +1,15 @@
+# {{ ansible_managed }}
+
+{% for item in groups['gateways'] %}
+define host{
+host_name       {{ item }}
+use             generic-host
+address         {{ item }}
+hostgroups      gateways
+}
+
+
+
+
+########################################################
+{% endfor %}

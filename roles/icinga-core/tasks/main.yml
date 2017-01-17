@@ -48,6 +48,14 @@
 - name: Configure Hostgroups for Icinga Satellites
   template: "src=hostgroups-satellites.cfg.j2 dest='/etc/icinga/objects/hostgroups-satellites.cfg' owner=root group=root"
 
+
+- name: Configure hostgroup for gateways
+  template: "src=hostgroup-gateways.cfg.j2 dest='/etc/icinga/objects/hostgroup-gateways.cfg' owner=root group=root"
+
+- name: Configure gateways
+  template: "src=gateways.cfg.j2 dest='/etc/icinga/objects/gateways.cfg' owner=root group=root"
+
+
 - name: Configure Icinga Satellites as objects
   template: "src=satellites.cfg.j2 dest='/etc/icinga/objects/satellites.cfg' owner=root group=root"
   notify:
