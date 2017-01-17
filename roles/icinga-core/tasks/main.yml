@@ -21,6 +21,11 @@
     regexp: '^check_external_commands='
     line: 'check_external_commands=1'
 
+- lineinfile:
+    dest: /etc/icinga/objects/generic-service_icinga.cfg
+    regexp: '^normal_check_interval'
+    line: 'normal_check_interval           1'
+
 - name: Make sure we can use htpasswd module
   apt: "pkg=python-passlib state=installed"
 
