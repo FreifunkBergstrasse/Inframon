@@ -19,11 +19,11 @@ command[check_bird6]=/usr/lib/nagios/plugins/check_procs -c 1: -w 1: -C bird6
 command[check_tunneldigger]=/usr/lib/nagios/plugins/check_procs -c 1: -w 1: -C python
 command[check_dhcp-server]=/usr/lib/nagios/plugins/check_procs -c 1: -w 1: -C dhcpd
 command[check_vnstat]=/usr/lib/nagios/plugins/check_vnstat.sh -i eth0
-command[check-dhcp-client]=/usr/lib/nagios/plugins/check_dhcp
-command[check-dns4-client]=/usr/lib/nagios/plugins/check_dns -H autoupdater-v4.server.freie-infrastruktur.de
-command[check-dns6-client]=/usr/lib/nagios/plugins/check_dns -H autoupdater-v6.server.freie-infrastruktur.de
-command[check-http4-client]=/usr/lib/nagios/plugins/check_http -H autoupdater-v4.server.freie-infrastruktur.de
-command[check-http6-client]=/usr/lib/nagios/plugins/check_http -H autoupdater-v6.server.freie-infrastruktur.de
+command[check-dhcp-client]=/usr/lib/nagios/plugins/check_dhcp -t 1
+command[check-dns4-client]=/usr/lib/nagios/plugins/check_dns -H autoupdater-v4.server.freie-infrastruktur.de -w 0,1 -c 0,5
+command[check-dns6-client]=/usr/lib/nagios/plugins/check_dns -H autoupdater-v6.server.freie-infrastruktur.de -w 0,1 -c 0,5
+command[check-http4-client]=/usr/lib/nagios/plugins/check_http -H autoupdater-v4.server.freie-infrastruktur.de -4 -w 0.1 -c 0.5
+command[check-http6-client]=/usr/lib/nagios/plugins/check_http -H autoupdater-v6.server.freie-infrastruktur.de -6 -w 0.1 -c 0.5
 
 
  
