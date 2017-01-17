@@ -5,6 +5,8 @@ icinga.server.freie-infrastruktur.de  ansible_ssh_host=10.1.160.22
 icsat01-01.server.freie-infrastruktur.de ansible_ssh_host=10.1.160.24
 #icsat02.server.freie-infrastruktur.de ansible_ssh_host=10.1.160.25
 
+icsat02-01.server.freie-infrastruktur.de ansible_ssh_host=10.1.168.24
+
 [icinga-gearman]
 icgearman.server.freie-infrastruktur.de ansible_ssh_host=10.1.160.23
 
