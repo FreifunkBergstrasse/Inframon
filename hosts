@@ -18,3 +18,4 @@ icgearman.server.freie-infrastruktur.de ansible_ssh_host=10.1.160.23
 
 [gateways]
 gw04.server.freie-infrastruktur.de ansible_ssh_host=213.133.111.130
+gw03.server.freie-infrastruktur.de ansible_ssh_host=176.9.38.150
