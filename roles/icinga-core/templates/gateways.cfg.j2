@@ -153,8 +153,8 @@ notification_options	w,c,r
 
 define service{
 host_name		{{ item }}
-service_description	DHCP-Server
-check_command		check_nrpe_1arg!check_dhcp-server
+service_description	active DHCP leases
+check_command		check_nrpe_1arg!check_active_leases
 max_check_attempts	5
 check_interval		1
 retry_interval		3
