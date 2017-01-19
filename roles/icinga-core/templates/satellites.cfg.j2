@@ -72,6 +72,83 @@ notification_period     24x7
 notification_options    w,c,r
 }
 
+define service{
+host_name		{{ item }}
+service_description	load
+check_command		check_nrpe_1arg!check_load
+max_check_attempts	5
+check_interval		1
+retry_interval		3
+check_period		24x7
+notification_interval	30
+notification_period 	24x7
+notification_options	w,c,r
+}
+
+define service{
+host_name		{{ item }}
+service_description	RAM
+check_command		check_nrpe_1arg!check_ram
+max_check_attempts	5
+check_interval		1
+retry_interval		3
+check_period		24x7
+notification_interval	30
+notification_period 	24x7
+notification_options	w,c,r
+}
+
+define service{
+host_name		{{ item }}
+service_description	zombie procs
+check_command		check_nrpe_1arg!check_zombie_procs
+max_check_attempts	5
+check_interval		1
+retry_interval		3
+check_period		24x7
+notification_interval	30
+notification_period 	24x7
+notification_options	w,c,r
+}
+
+define service{
+host_name		{{ item }}
+service_description	procs
+check_command		check_nrpe_1arg!check_total_procs
+max_check_attempts	5
+check_interval		1
+retry_interval		3
+check_period		24x7
+notification_interval	30
+notification_period 	24x7
+notification_options	w,c,r
+}
+
+define service{
+host_name		{{ item }}
+service_description	disk
+check_command		check_nrpe_1arg!check_disk
+max_check_attempts	5
+check_interval		1
+retry_interval		3
+check_period		24x7
+notification_interval	30
+notification_period 	24x7
+notification_options	w,c,r
+}
+
+define service{
+host_name		{{ item }}
+service_description	Updates
+check_command		check_nrpe_1arg!check_update
+max_check_attempts	5
+check_interval		60
+retry_interval		1
+check_period		24x7
+notification_interval	300
+notification_period 	24x7
+notification_options	w,c,r
+}
 
 
 
