@@ -22,8 +22,8 @@ command[check_vnstat]=/usr/lib/nagios/plugins/check_vnstat.sh -i eth0
 command[check-dhcp-client]=/usr/lib/nagios/plugins/check_dhcp -t 5
 command[check-dns4-client]=/usr/lib/nagios/plugins/check_dns -H ipv4.google.com -w 1 -c 2
 command[check-dns6-client]=/usr/lib/nagios/plugins/check_dns -H ipv6.google.com -w 1 -c 2
-command[check-http4-client]=/usr/lib/nagios/plugins/check_http -H autoupdater-v4.server.freie-infrastruktur.de -4 -w 0.5 -c 1
-command[check-http6-client]=/usr/lib/nagios/plugins/check_http -H autoupdater-v6.server.freie-infrastruktur.de -6 -w 0.5 -c 1
+command[check-http4-client]=/usr/lib/nagios/plugins/check_http -H ipv4.google.com -4 -w 0.5 -c 1
+command[check-http6-client]=/usr/lib/nagios/plugins/check_http -H ipv6.google.com -6 -w 0.5 -c 1
 command[check-ping-v4]=/usr/lib/nagios/plugins/check_ping -H google.de -w 15,2% -c 20,5% -4 -p10
 command[check-ping-v6]=/usr/lib/nagios/plugins/check_ping -H google.de -w 15,2% -c 20,5% -6 -p10
  
