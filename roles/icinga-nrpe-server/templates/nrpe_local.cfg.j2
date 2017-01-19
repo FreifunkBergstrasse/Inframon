@@ -1,7 +1,7 @@
 ######################################
 # Do any local nrpe configuration here
 ######################################
-connection_timeout=300
+connection_timeout=600
 allowed_hosts=127.0.0.1,{{ ansible_eth0.ipv4.address }},{{ hostvars[groups['icinga-coreserver'][0]]['ansible_eth0']['ipv4']['address'] }}
  
 # Debian Server
