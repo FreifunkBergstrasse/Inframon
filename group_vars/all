@@ -4,9 +4,11 @@ icinga_gearman_hostname: icgearman.server.freie-infrastruktur.de
 icinga_gearman_password: very-secret-password
 
 icinga_e-mail_address: monitoring@freie-infrastruktur.de
+icinga_e-mail_AuthUser: monitoring@freie-infrastruktur.de
 icinga_e-mail_pw: XXXXXXXXXXXXXXXX
 icinga_e-mail_srv: ha01s006-cl.org-dns.com
-
+icinga_e-mail_UseSTARTTLS: YES
+icinga_e-mail_UseTLS: YES
 
 
 icingaadminpw: 1i1ngaadm1n
